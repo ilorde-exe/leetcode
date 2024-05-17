@@ -1,0 +1,1 @@
+sol.reverse(123)
