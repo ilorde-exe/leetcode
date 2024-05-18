@@ -20,7 +20,8 @@ public:
     int maxFrequency(vector<int> &nums, int k)
     {
         sort(nums.begin(), nums.end());
-        int l = 0, r = 0, total = 0, freq = 0;
+        int l = 0, r = 0;
+        long total = 0, freq = 0;
         while (r != nums.size())
         {
             total += nums[r];
@@ -30,10 +31,10 @@ public:
                 l += 1;
             }
 
-            freq = max(freq, static_cast<long>(r - l + 1));
+            freq = (freq > static_cast<long>(r - l + 1)) ? freq : static_cast<long>(r - l + 1);
             r += 1;
         }
-        return freq;
+        return static_cast<int>(freq);
     }
 };
 int main()
