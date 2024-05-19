@@ -5,6 +5,7 @@
     "iostream": "cpp",
     "vector": "cpp",
     "algorithm": "cpp",
-    "map": "cpp"
+    "map": "cpp",
+    "xtree": "cpp"
   }
 }
