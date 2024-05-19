@@ -1,22 +1,40 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
-
-class Solution {
-public:
-    int reverse(int x) {
-        long rev=0;
-        int d;
-        while(x!=0){
-            rev = rev*10 + x%10;
-            x/=10;
-            if(rev>INT_MAX||rev<INT_MIN) return 0;
+void insertion_sort(int arr[], int n)
+{
+    for (int i = 0; i <= n - 1; i++)
+    {
+        int j = i;
+        while (j > 0 && arr[j - 1] > arr[j])
+        {
+            int temp = arr[j - 1];
+            arr[j - 1] = arr[j];
+            arr[j] = temp;
+            j--;
         }
-        return rev;
     }
-};
-int main(){
-    Solution sol;
-    cout << sol.reverse(1534236469) << endl;
+
+    cout << "After Using insertion sort: " << "\n";
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << "\n";
+}
+
+int main()
+{
+    int arr[] = {13, 46, 24, 52, 20, 9};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    cout << "Before Using insertion Sort: " << endl;
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    insertion_sort(arr, n);
     return 0;
 }

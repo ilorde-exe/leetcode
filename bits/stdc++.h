@@ -1,5 +1,6 @@
 #include <iostream>   // Input/output stream objects
 #include <vector>     // Dynamic array
+#include <math.h>     // Math functions
 #include <map>        // Map container
 #include <queue>      // Queue container
 #include <stack>      // Stack container
